@@ -1,0 +1,234 @@
+const SECTIONS = [
+  {
+    title: 'ПН',
+    content: {week: {
+      1: {num:3, 
+        lesson: "Военная подготовка", 
+        aud:"-", 
+        teacher: "-", 
+        isLecture: true},
+      2: {num:3, 
+        lesson: "Военная подготовка", 
+        aud:"-", 
+        teacher: "-", 
+        isLecture: true}
+}},
+  },
+
+  
+  {
+    title: 'ВТ',
+    content: {week: {
+      1: [{num: 2, 
+        lesson: ["Функціональна побудова ІВС та ПК", ""], 
+        aud: ["5.504", ''], 
+        teacher: ["Юрченко", ''], 
+        isLecture: false},
+        // next lesson
+        {num: 3, 
+          lesson: ["Основи орієнтації та навігації РО"], 
+          aud:["5.508"], 
+          teacher: ["Дивнич"], 
+          isLecture: true},
+        // next lesson 
+        {num: 4, 
+          lesson: ["Основи орієнтації та навігації РО", "Основи орієнтації та навігації РО"], 
+          aud:["5.504", '5.506'], 
+          teacher: ["Дивнич", 'Юрченко'], 
+          isLecture: false},
+        // next lesson 
+        {num: 5, 
+          lesson: ["Основи технологій виг.пристр.БСУ"], 
+          aud:["6.205"], 
+          teacher: ["Чиковани"], 
+          isLecture: true}
+      ],
+
+
+      2: [{num: 2, 
+        lesson: ["Основи технологій виг.пристр.БСУ"], 
+        aud: ["6.205"], 
+        teacher: ["Чиковани"], 
+        isLecture: true},
+        // next lesson
+        {num: 3, 
+          lesson: ["Основи орієнтації та навігації РО"], 
+          aud:["5.508"], 
+          teacher: ["Дивнич"], 
+          isLecture: true},
+        // next lesson 
+        {num: 4, 
+          lesson: ["", "Функціональна побудова ІВС та ПК"], 
+          aud:["", '5.504'], 
+          teacher: ["", 'Юрченко'], 
+          isLecture: false},
+        // next lesson 
+        {num: 5, 
+          lesson: ['', "Основи технологій виг.пристр.БСУ"], 
+          aud:['', "5.504"], 
+          teacher: ['', "Чиковани"], 
+          isLecture: false}
+      ]
+}},
+  },
+
+    {
+    title: 'СР',
+    content: {week: { // need to rec
+      1: [{num: 1, 
+        lesson: ["Основи моделювання техн.проц.", ""], 
+        aud: ["5.509", ''], 
+        teacher: ["Білак", ''], 
+        isLecture: false},
+        // next lesson
+        {num: 2, 
+          lesson: ["Організація інфор.-обч.процесів у БСУ", 'Основи моделювання техн.проц.'], 
+          aud:["5.504", '5.509'], 
+          teacher: ["Юрченко", 'Білак'], 
+          isLecture: false},
+        // next lesson 
+        {num: 3, 
+          lesson: ["Функціональна побудова ІВС та ПК"], 
+          aud:["5.508"], 
+          teacher: ["Дивнич"], 
+          isLecture: true},
+        // next lesson 
+        {num: 4, 
+          lesson: ["Оптимальні системи управління"], 
+          aud:["6.205"], 
+          teacher: ["Абрамович"], 
+          isLecture: true},
+      ],
+
+
+      2: [{num: 1, 
+        lesson: ["Основи теорії управління польотом"], 
+        aud: ["5.503"], 
+        teacher: ["Безкоровайний"], 
+        isLecture: false},
+        // next lesson
+        {num: 2, 
+          lesson: ["Функціональна побудова ІВС та ПК"], 
+          aud:["5.508"], 
+          teacher: ["Дивнич"], 
+          isLecture: true},
+        // next lesson 
+        {num: 3, 
+          lesson: ["Оптимальні системи управління"], 
+          aud:['6.205'], 
+          teacher: ['Абрамович'], 
+          isLecture: true},
+        // next lesson 
+        {num: 4, 
+          lesson: ['', "Оптимальні системи управління"], 
+          aud:['', "5.509"], 
+          teacher: ['', "Абрамович"], 
+          isLecture: false},
+        {num: 5, 
+          lesson: ['', "Оптимальні системи управління"], 
+          aud:['', "5.509"], 
+          teacher: ['', "Абрамович"], 
+          isLecture: false}
+      ]
+}},
+  },
+
+    {
+    title: 'ЧТ',
+    content: {week: { // need to rec
+      1: [{num: 3, 
+        lesson: ["Організація інфор.-обч.процесів у БСУ"], 
+        aud: ["6.205"], 
+        teacher: ["Мельник"], 
+        isLecture: true},
+        // next lesson
+        {num: 4, 
+          lesson: ["Основи теорії управління польотом"], 
+          aud:["6.205"], 
+          teacher: ["Троянов"], 
+          isLecture: true},
+        // next lesson 
+        {num: 5, 
+          lesson: ['', "Функціональна побудова ІВС та ПК"], 
+          aud:['', "5.504"], 
+          teacher: ['', "Юрченко"], 
+          isLecture: false},
+      ],
+
+
+      2: [{num: 2, 
+        lesson: ["Основи технологій виг.пристр.БСУ", ''], 
+        aud: ["5.504", ''], 
+        teacher: ["Чіковані", ''], 
+        isLecture: false},
+        // next lesson
+        {num: 3, 
+          lesson: ["Основи моделювання техн.проц."], 
+          aud:["6.205"], 
+          teacher: ["Білак"], 
+          isLecture: true},
+        // next lesson 
+        {num: 4, 
+          lesson: ["Основи теорії управління польотом"], 
+          aud:['6.205'], 
+          teacher: ['Троянов'], 
+          isLecture: true},
+        // next lesson 
+        {num: 5, 
+          lesson: ['Функціональна побудова ІВС та ПК', ''], 
+          aud:['5.504', ""], 
+          teacher: ['Юрченко', ""], 
+          isLecture: false},
+      ]
+}},
+  },
+
+    {
+    title: 'ПТ',
+    content: {week: { // need to rec
+      1: [{num: 1, 
+        lesson: ["Основи теорії управління польотом", ''], 
+        aud: ["5.503", ''], 
+        teacher: ["Безкоровайний", ''], 
+        isLecture: false},
+        // next lesson
+        {num: 2, 
+          lesson: ['Оптимальні системи управління', "Основи теорії управління польотом"], 
+          aud:['5.503', "5.509"], 
+          teacher: ['Абрамович', "Безкоровайний"], 
+          isLecture: false},
+        {num: 3, 
+          lesson: ['Оптимальні системи управління', "Організація інфор.-обч.процесів у БСУ"], 
+          aud:['5.503', "5.504"], 
+          teacher: ['Абрамович', "Юрченко"], 
+          isLecture: false},
+      ],
+
+
+      2: [{num: 1, 
+        lesson: ["", 'Основи теорії управління польотом'], 
+        aud: ["", '5.503'], 
+        teacher: ["", 'Безкоровайний'], 
+        isLecture: false},
+        // next lesson
+        {num: 2, 
+          lesson: ['', "Функціональна побудова ІВС та ПК"], 
+          aud:["", '5.504'], 
+          teacher: ["", 'Юрченко'], 
+          isLecture: false},
+        // next lesson 
+        {num: 3, 
+          lesson: ["Організація інфор.-обч.процесів у БСУ"], 
+          aud:['6.205'], 
+          teacher: ['Мельник'], 
+          isLecture: true},
+        // next lesson 
+        {num: 4, 
+          lesson: ['Функціональна побудова ІВС та ПК', ''], 
+          aud:['5.504', ""], 
+          teacher: ['Юрченко', ""], 
+          isLecture: false},
+      ]
+}},
+  },
+];
