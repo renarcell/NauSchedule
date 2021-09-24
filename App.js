@@ -1,45 +1,15 @@
 import { StatusBar } from 'expo-status-bar';
 import React, { Component } from 'react';
 import { Dimensions, StyleSheet, Text, View } from 'react-native';
-import SwitchButton from 'switch-button-react-native';
-import AccordionSchedule, {Record} from './components/day-item/day-item';
+import AccordionSchedule from './components/accordion-schedule/accordion-schedule';
 import SwitchGroup from './components/switch-group/switch-group';
-
-import "./weeks/week1VT.jpg";
-import "./weeks/week1CHT.jpg";
-import "./weeks/week1SR.jpg";
-import "./weeks/week1PT.jpg";
-
-import "./weeks/week2VT.jpg";
-import "./weeks/week2CHT.jpg";
-import "./weeks/week2SR.jpg";
-import "./weeks/week2PT.jpg";
-
-
+import WeekNumber from './components/week-number/week-number';
+import RandomButton from './components/random-button/random-button';
 let ScreenWidth = Dimensions.get("window").width;
 export default class App extends Component {
 
-  weeks = {
-    week: {
-      1: {
-        "ПН": "./weeks/PN.jpg",
-        "ВТ": "./weeks/week1VT.jpg",
-        "СР": "./weeks/week1SR.jpg",
-        "ЧТ": "./weeks/week1CHT.jpg",
-        "ПТ": "./weeks/week1PT.jpg"
-      },
-      2: {
-        "ПН": "./weeks/PN.jpg",
-        "ВТ": "./weeks/week2VT.jpg",
-        "СР": "./weeks/week2SR.jpg",
-        "ЧТ": "./weeks/week2CHT.jpg",
-        "ПТ": "./weeks/week2PT.jpg"
-      }
-    }
-  }
   state = {
     week: 1,
-    group: 2
   };
 
   render() {
@@ -51,11 +21,32 @@ export default class App extends Component {
         justifyContent: 'space-around', 
         alignItems: 'center'
       },
-      buttons: {
+      topPanel: {
         width: ScreenWidth,
-        textAlign: 'center',
+        flexDirection: 'column',
+        justifyContent: 'flex-start',
+        alignItems: 'center'
+      },
+      scheduleButtons: {
+        width: ScreenWidth,
         flexDirection: 'row',
+        textAlign: 'center',
         justifyContent: 'space-around'
+      },
+      randomContainer: {
+        paddingTop: 35,
+        
+      },
+      randomButton: {
+        width: 0.5 * ScreenWidth,
+                      height: 50,
+                      margin: 10,
+                      marginLeft: 'auto',
+                      marginRight: 'auto',
+                      borderRadius: 4.5, 
+                      backgroundColor: '#00bcd4',
+                      justifyContent: 'center', 
+                      alignItems: 'center',
       },
       days: {
         justifyContent: 'flex-start',
@@ -65,19 +56,22 @@ export default class App extends Component {
 
     return (
       <View style={styles.container}>
-        <View style={styles.buttons}>
-            <SwitchGroup onValueChange={(val) => this.setState({ week: val })}
-                        secondSwitch={false}
-                        label="НЕДЕЛЯ"/>
-            <SwitchGroup onValueChange={(val) => this.setState({ group: val })}
-                  secondSwitch={true}
-                  label="ПОДГРУППА"/>
+        <View style={styles.topPanel}>
+            <View style={styles.scheduleButtons}>
+                <SwitchGroup onValueChange={(val) => this.setState({ week: val })}
+                              secondSwitch={false}
+                              label="НЕДЕЛЯ"/>
+                <WeekNumber/>
+            </View>
+
+          <View style={styles.randomContainer}>
+            <RandomButton style={styles.randomButton}/>
+          </View>
         </View>
 
 
         <View style={styles.days}>
-          <AccordionSchedule week={this.state.week}
-                             group={this.state.group}/>
+          <AccordionSchedule week={this.state.week}/>
         </View>
         <StatusBar style="auto" />
       </View>
