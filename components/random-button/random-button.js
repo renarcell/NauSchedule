@@ -7,8 +7,9 @@ export default class RandomButton extends Component {
 
     render() {
         return (
-            <Button onPress={() => {}}
-                title="ПОДБРОСИТЬ МОНЕТКУ"
+            <Button style={this.props.st}
+                onPress={this.props.onPress}
+                title="ИДТИ НА ПАРЫ?"
                 color="#00bcd4"
                 accessibilityLabel="Learn more about this purple button"
             />

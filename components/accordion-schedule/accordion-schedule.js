@@ -78,10 +78,13 @@ export default class AccordionSchedule extends Component {
   state = {
       activeSections: [],
       week: 1,
+      day: (new Date()).getDay()
     };
 
   
     _renderHeader = (section) => {
+      const days = ['ВОСКРЕСЕНЬЕ', 'ПОНЕДЕЛЬНИК', 'ВТОРНИК', 'СРЕДА', 'ЧЕТВЕРГ', 'ПЯТНИЦА', 'СУББОТА']
+      const btnColor = (this.state.week == this.props.weekNumber && section.title === days[this.state.day]) ? '#3366ff' : '#00bcd4';
       const styles = StyleSheet.create({
         container: { width: 0.5 * ScreenWidth,
                       height: 50,
@@ -89,7 +92,7 @@ export default class AccordionSchedule extends Component {
                       marginLeft: 'auto',
                       marginRight: 'auto',
                       borderRadius: 4.5, 
-                      backgroundColor: '#00bcd4',
+                      backgroundColor: btnColor,
                       justifyContent: 'center', 
                       alignItems: 'center',
                       

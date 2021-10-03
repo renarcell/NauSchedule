@@ -4,13 +4,6 @@ import { Dimensions, StyleSheet, Text, View, Image } from 'react-native';
 let ScreenWidth = Dimensions.get("window").width;
 
 export default class WeekNumber extends Component {
-    getWeekNumber() {
-        const one_day = 1000 * 60 * 60 * 24;
-        const date1 = new Date(2021, 8, 13);
-        const date2 = new Date();
-        const k = Math.floor((Math.round(date2.getTime() - date1.getTime()) / (one_day))/7) % 2;
-        return k + 1;
-    }
 
     render() {
         return (
@@ -30,7 +23,7 @@ export default class WeekNumber extends Component {
                           }}>
             <Text style={{color: 'red', textAlign: 'center'}}>
                 {
-                    this.getWeekNumber()
+                    this.props.getWeekNumber()
                 }
             </Text>
             </View>
